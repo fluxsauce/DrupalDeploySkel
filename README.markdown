@@ -13,10 +13,10 @@ This package is intended to accompany the presentation "Optimize Site Deployment
 
 # Usage
 
-    projects/NAME/install.sh dev
-    projects/NAME/install.sh prod
-    projects/NAME/rebuild.sh dev
-    projects/NAME/rebuild.sh prod
+    projects/NAME/config/install.sh dev
+    projects/NAME/config/install.sh prod
+    projects/NAME/config/rebuild.sh dev
+    projects/NAME/config/rebuild.sh prod
 
 # Contents
 
@@ -50,7 +50,7 @@ Scripts that need to be edited for the skeleton to function have been clearly ma
 
 ## Contributed code
 
-* [Bash INI Parser](http://ajdiaz.wordpress.com/2008/02/09/bash-ini-parser/) by Andrés J. Díaz, MIT License.
+* [Bash INI Parser](http://ajdiaz.wordpress.com/2008/02/09/bash-ini-parser/) by Andr&eacute;s J. D&iacuteaz, MIT License.
 
 ## Contributing
 
@@ -60,7 +60,7 @@ Please use the [issue tracker](https://github.com/fluxsauce/DrupalDeploySkel/iss
 
 ### MIT license
 
-Copyright (c) 2011 Jon Peck and [FluxSauce](http://fluxsauce.com)
+Drupal Deployment Skeleton (excluding contributed code) is Copyright (c) 2011 Jon Peck and [FluxSauce](http://fluxsauce.com)
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
