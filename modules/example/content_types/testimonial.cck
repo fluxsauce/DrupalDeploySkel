@@ -1,0 +1,188 @@
+$content['type']  = array (
+  'name' => 'Testimonial',
+  'type' => 'testimonial',
+  'description' => 'A <em>Testimonial</em> is a formal statement testifying to the organization\'s character and qualifications.',
+  'title_label' => 'Advocate',
+  'body_label' => 'Body',
+  'min_word_count' => '0',
+  'help' => 'Common formats for the advocate:<ul><li>Full name with city & state, and/or company name.</li><li>First initial and full last name with city & state, and/or company name.</li><li>First and last initials with city & state, and/or company name</li><li>Person\'s title with city & state, and/or company name</li></ul>
+
+Example: <b>George B., Townsville, NY</b>',
+  'node_options' => 
+  array (
+    'status' => true,
+    'promote' => false,
+    'sticky' => false,
+    'revision' => false,
+  ),
+  'seo_checker' => 0,
+  'old_type' => 'testimonial',
+  'orig_type' => '',
+  'module' => 'node',
+  'custom' => '1',
+  'modified' => '1',
+  'locked' => '0',
+  'ant' => '0',
+  'ant_pattern' => '',
+  'ant_php' => 0,
+);
+$content['fields']  = array (
+  0 => 
+  array (
+    'label' => 'Video',
+    'field_name' => 'field_testimonial_video',
+    'type' => 'emvideo',
+    'widget_type' => 'emvideo_textfields',
+    'change' => 'Change basic information',
+    'weight' => '-3',
+    'providers' => 
+    array (
+      1 => 1,
+      0 => 1,
+      'youtube' => false,
+    ),
+    'video_width' => '425',
+    'video_height' => '350',
+    'video_autoplay' => '',
+    'preview_width' => '425',
+    'preview_height' => '350',
+    'preview_autoplay' => '',
+    'thumbnail_width' => '120',
+    'thumbnail_height' => '90',
+    'thumbnail_default_path' => '',
+    'thumbnail_link_title' => 'Watch video',
+    'meta_fields' => 
+    array (
+      1 => 1,
+      0 => 1,
+      'title' => false,
+      'description' => false,
+    ),
+    'description' => '',
+    'default_value' => 
+    array (
+      0 => 
+      array (
+        'embed' => '',
+        'value' => '',
+      ),
+    ),
+    'default_value_php' => '',
+    'default_value_widget' => NULL,
+    'group' => false,
+    'required' => 0,
+    'multiple' => '0',
+    'op' => 'Save field settings',
+    'module' => 'emvideo',
+    'widget_module' => 'emvideo',
+    'columns' => 
+    array (
+      'embed' => 
+      array (
+        'type' => 'text',
+        'size' => 'big',
+        'not null' => false,
+        'sortable' => true,
+      ),
+      'value' => 
+      array (
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => false,
+        'sortable' => true,
+      ),
+      'provider' => 
+      array (
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => false,
+        'sortable' => true,
+      ),
+      'data' => 
+      array (
+        'type' => 'text',
+        'size' => 'big',
+        'not null' => false,
+        'sortable' => false,
+      ),
+      'status' => 
+      array (
+        'description' => 'The availability status of this media.',
+        'type' => 'int',
+        'unsigned' => 'TRUE',
+        'not null' => true,
+        'default' => 1,
+      ),
+      'version' => 
+      array (
+        'description' => 'The version of the provider\'s data.',
+        'type' => 'int',
+        'unsigned' => true,
+        'not null' => true,
+        'default' => 0,
+      ),
+      'title' => 
+      array (
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => false,
+        'sortable' => true,
+      ),
+      'description' => 
+      array (
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => false,
+        'sortable' => true,
+      ),
+      'duration' => 
+      array (
+        'description' => 'Store the duration of a video in seconds.',
+        'type' => 'int',
+        'unsigned' => true,
+        'not null' => true,
+        'default' => 0,
+      ),
+    ),
+    'display_settings' => 
+    array (
+      'weight' => '31',
+      'parent' => '',
+      'label' => 
+      array (
+        'format' => 'hidden',
+      ),
+      'teaser' => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'full' => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      4 => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+      'token' => 
+      array (
+        'format' => 'default',
+        'exclude' => 0,
+      ),
+    ),
+  ),
+);
+$content['extra']  = array (
+  'title' => '-5',
+  'body_field' => '-4',
+  'revision_information' => '-1',
+  'author' => '20',
+  'options' => '0',
+  'menu' => '3',
+  'path' => '1',
+  'xmlsitemap' => '2',
+  'nodewords' => '-2',
+);

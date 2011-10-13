@@ -1,0 +1,43 @@
+cvs diff: Diffing modules/update
+Index: modules/update/update.fetch.inc
+===================================================================
+RCS file: /cvs/drupal/drupal/modules/update/update.fetch.inc,v
+retrieving revision 1.7.2.7
+diff -u -p -r1.7.2.7 update.fetch.inc
+--- modules/update/update.fetch.inc	21 Jul 2009 08:59:12 -0000	1.7.2.7
++++ modules/update/update.fetch.inc	7 Dec 2009 20:33:16 -0000
+@@ -222,6 +222,11 @@ class update_xml_parser {
+         $this->current_term = array();
+         $this->current_object = &$this->current_term;
+         break;
++      case 'FILE':
++        unset($this->current_object);
++        $this->current_file = array();
++        $this->current_object = &$this->current_file;
++        break;
+     }
+   }
+ 
+@@ -253,6 +258,13 @@ class update_xml_parser {
+       case 'TERMS':
+         $this->current_object = &$this->current_release;
+         break;
++      case 'FILE':
++        unset($this->current_object);
++        $this->current_release['files'][] = $this->current_file;
++        break;
++      case 'FILES':
++        $this->current_object = &$this->current_release;
++        break;
+       default:
+         $this->current_object[strtolower($this->current_tag)] = trim($this->current_object[strtolower($this->current_tag)]);
+         $this->current_tag = '';
+@@ -260,7 +272,7 @@ class update_xml_parser {
+   }
+ 
+   function data($parser, $data) {
+-    if ($this->current_tag && !in_array($this->current_tag, array('PROJECT', 'RELEASE', 'RELEASES', 'TERM', 'TERMS'))) {
++    if ($this->current_tag && !in_array($this->current_tag, array('PROJECT', 'RELEASE', 'RELEASES', 'TERM', 'TERMS', 'FILE', 'FILES'))) {
+       $tag = strtolower($this->current_tag);
+       if (isset($this->current_object[$tag])) {
+         $this->current_object[$tag] .= $data;

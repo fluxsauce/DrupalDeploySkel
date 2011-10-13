@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file
+ * example module.
+ */
+
+/**
+ * Implementation of hook_imagecache_default_presets().
+ */
+function example_imagecache_default_presets() {
+  global $_presets;
+  $module_name = 'example';
+  $filename = drupal_get_path('module', $module_name) . '/defaults/imagecache_presets.inc.php';
+  include_once($filename);
+  return $_presets;
+}

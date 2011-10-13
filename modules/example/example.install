@@ -1,0 +1,58 @@
+<?php
+
+/**
+ * @file
+ * example module's install and uninstall code.
+ */
+
+/**
+ * Implementation of hook_install().
+ */
+function example_install() {
+  $module_name = 'example';
+  // Variables
+  include_once(drupal_get_path('module', $module_name) . '/defaults/variables.inc.php');
+  // Blocks
+  include_once(drupal_get_path('module', $module_name) . '/defaults/blocks.inc.php');
+  $content_types = array(
+    'testimonial',
+  );
+  foreach ($content_types as $content_type) {
+    // Only create content type if it does not already exist
+    if (!node_get_types('type', $content_type)) {
+      $filename = drupal_get_path('module', $module_name) . '/content_types/' . $content_type . '.cck';
+      // Build form state
+      $form_state = array(
+        'values' => array(
+          'type_name' => '<create>',
+          'macro' => implode('', file($filename)),
+        ),
+      );
+      drupal_execute('content_copy_import_form', $form_state);
+    }
+  }
+  // -- Clear content type cache
+  content_clear_type_cache();
+  // Content
+  include_once(drupal_get_path('module', $module_name) . '/defaults/content.inc.php');
+  // Contact
+  db_query('INSERT INTO {contact} SET category = "Contact", recipients = "EMAIL@ADDRESS.COM" ');
+  $contact = menu_link_load(db_result(db_query('SELECT mlid FROM {menu_links} WHERE link_path = "contact" ')));
+  $contact = array_merge((array) $contact, array(
+    'original_item' => $contact,
+    'customized' => 1,
+    'weight' => 49,
+    'hidden' => 0,
+    'menu_name' => 'primary-links',
+    'plid' => '0',
+  ));
+  menu_link_save($contact);
+  // Taxonomy
+  include_once(drupal_get_path('module', $module_name) . '/defaults/taxonomy.inc.php');
+  // WYSIWYG
+  include_once(drupal_get_path('module', $module_name) . '/defaults/wysiwyg.inc.php');
+  // Permissions
+  include_once(drupal_get_path('module', $module_name) . '/defaults/permissions.inc.php');
+  // Users
+  include_once(drupal_get_path('module', $module_name) . '/defaults/users.inc.php');
+}
