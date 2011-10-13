@@ -50,7 +50,7 @@ Scripts that need to be edited for the skeleton to function have been clearly ma
 
 ## Contributed code
 
-* [Bash INI Parser](http://ajdiaz.wordpress.com/2008/02/09/bash-ini-parser/) by Andr&eacute;s J. D&iacuteaz, MIT License.
+* [Bash INI Parser](http://ajdiaz.wordpress.com/2008/02/09/bash-ini-parser/) by Andr&eacute;s J. D&iacute;az, MIT License.
 
 ## Contributing
 
