@@ -37,7 +37,11 @@ Scripts that need to be edited for the skeleton to function have been clearly ma
       - testimonial.cck - Exported CCK Content Type
     - defaults\ - Collection of default values used in the installation.
       - blocks.inc.php - SQL for disabling "Powered by Drupal" and "User login" blocks for a given theme.
+      - contact.inc.php - Sets contact page defaults, creates menu link
       - content.inc.php - Programmatically creating two pages and menu links
+      - d7-blocks.inc.php - Drupal 7 SQL for disabling "Powered by Drupal" and "User login" blocks for a given theme.
+      - d7-content.inc.php - Drupal 7 basic page and menu creation 
+      - d7-wysiwyg.inc.php - Drupal 7 SQL for creating WYSIWYG profiles.
       - imagecache&#95;presets.inc.php - Exported imagecache presets
       - permissions.inc.php - Creates a role, then grants and revokes permissions.
       - taxonomy.inc.php - Creates a vocabulary, then terms in that vocabulary.
