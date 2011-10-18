@@ -36,17 +36,7 @@ function example_install() {
   // Content
   include_once(drupal_get_path('module', $module_name) . '/defaults/content.inc.php');
   // Contact
-  db_query('INSERT INTO {contact} SET category = "Contact", recipients = "EMAIL@ADDRESS.COM" ');
-  $contact = menu_link_load(db_result(db_query('SELECT mlid FROM {menu_links} WHERE link_path = "contact" ')));
-  $contact = array_merge((array) $contact, array(
-    'original_item' => $contact,
-    'customized' => 1,
-    'weight' => 49,
-    'hidden' => 0,
-    'menu_name' => 'primary-links',
-    'plid' => '0',
-  ));
-  menu_link_save($contact);
+  include_once(drupal_get_path('module', $module_name) . '/defaults/contact.inc.php');
   // Taxonomy
   include_once(drupal_get_path('module', $module_name) . '/defaults/taxonomy.inc.php');
   // WYSIWYG
@@ -55,4 +45,6 @@ function example_install() {
   include_once(drupal_get_path('module', $module_name) . '/defaults/permissions.inc.php');
   // Users
   include_once(drupal_get_path('module', $module_name) . '/defaults/users.inc.php');
+  // Forums
+  include_once(drupal_get_path('module', $module_name) . '/defaults/forum.inc.php');
 }
